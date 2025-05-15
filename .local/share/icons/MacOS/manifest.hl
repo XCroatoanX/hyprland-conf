@@ -1,0 +1,4 @@
+﻿name = MacOS
+description = MacOS cursors ported for Hyprland :)
+version = 1.0
+cursors_directory = hyprcursors
