@@ -1,0 +1,180 @@
+* {
+  font-size: 13px;
+  min-height: 0;
+  border-radius: 0.6rem;
+  padding: 0;
+  color: #ddd;
+}
+
+window#waybar {
+  background: rgba(28, 28, 30, 0.3);
+  color: #ddd;
+  font-family: "Adwaita Sans", sans-serif;
+  font-size: 13px;
+}
+
+tooltip {
+  background: #222222;
+}
+tooltip label {
+  color: #eee;
+}
+
+/* Workspaces */
+#workspaces {
+  margin: 0 4px;
+}
+#workspaces button {
+  padding: 0 5px;
+  background: transparent;
+  color: #bbb;
+  border-bottom: 2px solid transparent;
+}
+#workspaces button.focused {
+  background: #45515f;
+  border-bottom: 2px solid #ddd;
+  color: #eee;
+}
+
+/* General module spacing (tighter) */
+#mode,
+#clock,
+#battery,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#idle_inhibitor,
+#scratchpad,
+#mpd,
+#custom-os_button,
+#custom-power,
+#power-profiles-daemon {
+  margin: 0 2px;
+  padding: 0 6px;
+}
+
+/* Slimmer clock */
+#clock {
+  font-size: 13px;
+  color: #ccc;
+  padding: 0 5px;
+}
+
+/* Battery */
+#battery {
+  min-width: 40px;
+  padding: 0 5px;
+}
+#battery.charging,
+#battery.plugged {
+  color: #d4f7d4;
+  background-color: #2d6a3f;
+}
+#battery.warning:not(.charging),
+#battery.critical:not(.charging) {
+  background-color: #a8383b;
+  color: #eee;
+  animation: blink 0.5s linear infinite alternate;
+}
+@keyframes blink {
+  to {
+    background-color: #2d6a3f;
+    color: #ddd;
+  }
+}
+
+/* Audio & Network */
+#wireplumber {
+  min-width: 50px;
+}
+#network {
+  min-width: 50px;
+}
+#network.disconnected {
+  background-color: #a8383b;
+  color: #eee;
+}
+
+/* Idle inhibitor */
+#idle_inhibitor.activated {
+  background-color: #3a3a3a;
+  color: #ccc;
+}
+
+/* Tray */
+#tray > .passive {
+  opacity: 0.6;
+}
+#tray > .needs-attention {
+  background-color: #b94e4a;
+  color: #eee;
+}
+
+/* Mode */
+#mode {
+  background: #45515f;
+  border-bottom: 2px solid #ddd;
+  color: #eee;
+  padding: 0 5px;
+}
+
+/* Custom OS button */
+#custom-os_button {
+  font-size: 24px;
+  background: transparent;
+  border-radius: 0.4rem;
+  padding: 0 5px;
+}
+#custom-os_button:hover {
+  background: #ddd;
+  color: #222;
+}
+
+/* Slim power section */
+#power-profiles-daemon {
+  min-width: 30px;
+}
+#custom-power {
+  min-width: 24px;
+}
+
+/* Accessibility */
+label:focus {
+  background-color: #222;
+}
+
+/* Edge margin fix */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+.modules-right > widget:last-child {
+  margin-right: 0;
+}
+
+/* Hover effect for workspaces */
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+/* Hover effect for modules on the right */
+#clock:hover,
+#battery:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#wireplumber:hover,
+#custom-media:hover,
+#mode:hover,
+#idle_inhibitor:hover,
+#scratchpad:hover,
+#mpd:hover,
+#power-profiles-daemon:hover,
+#custom-power:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-radius: 0.75rem;
+}
